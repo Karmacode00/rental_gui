@@ -4,10 +4,14 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class FrameArriendoCuotas extends JFrame implements ActionListener{
         JButton ingresoCliente;
         JFrame frame = new JFrame();
+
+        JComboBox clientesBox;
 
 
        public FrameArriendoCuotas() {
@@ -40,6 +44,24 @@ public class FrameArriendoCuotas extends JFrame implements ActionListener{
                 ingresoCliente.addActionListener(this); // Opcional sería usar expresión lambda (e -> System.out.println("Hello World))
                 ingresoCliente.setText("Ingresar nuevo cliente");
                 this.add(ingresoCliente);
+
+                //En el caso de querer entregar algún warning o mensaje, se puede usar JOptionPane, también para confirmaciones
+
+                ArrayList<String> clientes = new ArrayList<String>();
+                clientes.add("Pepe");
+                clientes.add("Gato");
+
+                String[] clientesArr = new String[clientes.size()];
+                    for(int i = 0; i < clientesArr.length; i++) {
+                        clientesArr[i] = clientes.get(i);
+                }
+                System.out.println(clientes);
+
+                clientesBox = new JComboBox(clientesArr);
+                clientesBox.setBounds(100, 100, 100, 100);
+                clientesBox.setVisible(true);
+                this.add(clientesBox);
+
 
 
         }
