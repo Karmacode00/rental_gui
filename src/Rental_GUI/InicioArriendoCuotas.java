@@ -28,6 +28,7 @@ public class InicioArriendoCuotas extends JFrame implements ActionListener{
         this.getContentPane().setBackground(new Color(220, 220, 220));
         this.add(panel1);
         agregarNuevoClienteButton.addActionListener(this);
+        pagarPrimeraCuotaButton.addActionListener(this);
 
         addWindowListener(new WindowAdapter()
         {
@@ -43,6 +44,11 @@ public class InicioArriendoCuotas extends JFrame implements ActionListener{
             System.out.println("Hello world");
             this.dispose();
             IngresoClientes ingreso = new IngresoClientes();
+        }
+        if(e.getSource()== pagarPrimeraCuotaButton){
+            System.out.println("Hello world");
+            this.dispose();
+            PagarCuotas pagar = new PagarCuotas();
         }
     }
 }
