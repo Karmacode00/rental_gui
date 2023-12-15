@@ -52,8 +52,14 @@ public class FrameArriendoCuotas extends JFrame implements ActionListener{
                 clientes.add("Gato");
 
                 String[] clientesArr = new String[clientes.size()];
-                    for(int i = 0; i < clientesArr.length; i++) {
+               /*     for(int i = 0; i < clientesArr.length; i++) {
                         clientesArr[i] = clientes.get(i);
+                }*/
+
+
+               // Copiar los elementos del ArrayList al array
+                  for (int i = 0; i < clientes.size(); i++) {
+                  clientesArr[i] = clientes.get(i);
                 }
                 System.out.println(clientes);
 

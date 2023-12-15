@@ -5,7 +5,8 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class FrameIngresoCliente extends JFrame{
+public class FrameIngresoCliente extends JFrame implements ActionListener{
+    JButton regresar;
 
     JFrame frame = new JFrame();
     JLabel titulo =  new JLabel("CLIENTES");
@@ -22,7 +23,19 @@ public class FrameIngresoCliente extends JFrame{
         titulo.setVerticalAlignment(JLabel.TOP);
         titulo.setFont(new Font("Arial", Font.PLAIN, 20));
 
-
+        regresar = new JButton();
+        regresar.setBounds(200, 200, 180, 20);
+        regresar.addActionListener(this); // Opcional sería usar expresión lambda (e -> System.out.println("Hello World))
+        regresar.setText("Regresar");
+        this.add(regresar);
     }
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if(e.getSource()== regresar){
+            // System.out.println("Hello world");
+            this.dispose();
+            FrameArriendoCuotas arriendoCuotas = new FrameArriendoCuotas();
 
+        }
+    }
 }
